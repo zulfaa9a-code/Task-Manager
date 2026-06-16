@@ -6,7 +6,8 @@ const taskModel = require("./models/task.model")
 const cookieParser= require("cookie-parser")
 const authRouter= require('./routes/auth.routes')
 app.use(cors({
-  origin: "http://localhost:5173",
+  origin:[ "http://localhost:5173",
+   "https://task-manager-jmzi.onrender.com"],
   credentials: true
 }));
 app.use(express.json())
