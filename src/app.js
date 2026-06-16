@@ -58,3 +58,4 @@ app.use((req, res) => {
     path.join(__dirname, "../dist/index.html")
   );
 });
+module.exports=app
