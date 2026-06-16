@@ -1,4 +1,5 @@
 const express=require('express')
+const path = require("path");
 const cors = require('cors')
 const app= express()
 const taskModel = require("./models/task.model")
@@ -45,4 +46,16 @@ app.get("/alltask" , async(req, res)=>{
         tasks: task
     })
 })
+
+app.use(
+  express.static(
+    path.join(__dirname, "../Frontend/dist")
+  )
+);
+
+app.get("*", (req, res) => {
+  res.sendFile(
+    path.join(__dirname, "../Frontend/dist/index.html")
+  );
+});
 module.exports=app;
