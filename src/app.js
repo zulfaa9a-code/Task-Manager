@@ -7,7 +7,7 @@ const cookieParser= require("cookie-parser")
 const authRouter= require('./routes/auth.routes')
 app.use(cors({
   origin:[ "http://localhost:5173",
-   "https://task-manager-jmzi.onrender.com"],
+   "https://task-manager-k64x.onrender.com"],
   credentials: true
 }));
 app.use(express.json())
