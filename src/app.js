@@ -10,6 +10,7 @@ app.use(cors({
    "https://task-manager-k64x.onrender.com"],
   credentials: true
 }));
+app.use(express.static("./public"))
 app.use(express.json())
 app.use(cookieParser())
 app.use("",authRouter)
@@ -47,15 +48,9 @@ app.get("/alltask" , async(req, res)=>{
         tasks: task
     })
 })
-
-app.use(
-  express.static(
-    path.join(__dirname, "../dist")
-  )
-);
 app.use((req, res) => {
   res.sendFile(
-    path.join(__dirname, "../dist/index.html")
+    path.join(__dirname, "../public/index.html")
   );
 });
 module.exports=app
